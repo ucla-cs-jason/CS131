@@ -1,0 +1,23 @@
+struct circle{
+  r: int;
+}
+
+struct square {
+  s: int;
+}
+
+func f() : void {
+    return;
+}
+
+func main(): void{
+  var d : s;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/
+
+

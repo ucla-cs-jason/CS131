@@ -1,0 +1,9 @@
+func main() {
+  print("1" < "2");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

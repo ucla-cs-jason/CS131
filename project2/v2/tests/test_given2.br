@@ -1,0 +1,31 @@
+func foo(a) {
+  print(a);
+}
+
+func foo(a,b) {
+  print(a," ",b);
+}
+
+func Foo(n) {
+    if (n == 0) {
+        return;
+    }
+    foo(n);
+    Foo(n - 1);
+}
+
+func main() {
+  foo(5);
+  foo(6,7);
+  Foo(3);
+}
+
+/*
+*OUT*
+5
+6 7
+3
+2
+1
+*OUT*
+*/

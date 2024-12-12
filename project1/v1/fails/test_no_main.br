@@ -1,0 +1,9 @@
+func Main() {
+  print("This shouldn't be seen");
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

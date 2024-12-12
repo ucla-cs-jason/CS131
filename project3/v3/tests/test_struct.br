@@ -1,0 +1,12 @@
+struct i {
+    val: int;
+}
+func main() : int {
+    
+    return;
+}
+
+/*
+*OUT*
+*OUT*
+*/

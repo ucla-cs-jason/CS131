@@ -1,0 +1,9 @@
+func main() {
+    print(true + false);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

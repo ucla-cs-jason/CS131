@@ -1,0 +1,51 @@
+func foo(x) {
+  if (x < 0) {
+    print(x);
+    return -x;
+    print("this will not print");
+  }
+  print("this will not print either");
+  return 5*x;
+}
+
+func main() {
+    print("the positive value is ", foo(-1));
+    print(true || false);
+    print(true || false && false);
+    print(5/3); 
+    print(-6);
+    print(!true);
+    var a;
+    a = 3;
+    print(a > 5);
+    print("abc"+"def");
+    print(13 == false);
+    print("13" == 13);
+    print("13" != 13);
+    print(13 == nil);
+    print(15 / 4);
+    print(-15 / 4);
+    print(print("yay"));
+}
+
+/*
+*OUT*
+-1
+the positive value is 1
+true
+true
+1
+-6
+false
+false
+abcdef
+false
+false
+true
+false
+3
+-4
+yay
+nil
+*OUT*
+*/

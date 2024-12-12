@@ -1,0 +1,163 @@
+struct Edge {
+    target: Node;
+    weight: int;
+    next: Edge;
+}
+
+struct Node {
+    name: string;
+    distance: int;
+    visited: bool;
+    edges: Edge;
+    next: Node;
+}
+
+struct Graph {
+    nodes: Node;
+}
+
+func main() : void {
+    var graph: Graph;
+    graph = createGraph();
+
+    var a: Node;
+    var b: Node;
+    var c: Node;
+    var d: Node;
+
+    a = createNode("A");
+    b = createNode("B");
+    c = createNode("C");
+    d = createNode("D");
+
+    addNode(graph, a);
+    addNode(graph, b);
+    addNode(graph, c);
+    addNode(graph, d);
+
+    addEdge(a, b, 1);
+    addEdge(a, c, 4);
+    addEdge(b, c, 2);
+    addEdge(b, d, 6);
+    addEdge(c, d, 3);
+
+    print("Shortest path from A to D:");
+    var path: int;
+    path = findShortestPath(graph, "A", "D");
+    print(path);
+}
+
+func createGraph() : Graph {
+    var g: Graph;
+    g = new Graph;
+    g.nodes = nil;
+    return g;
+}
+
+func createNode(name: string) : Node {
+    var n: Node;
+    n = new Node;
+    n.name = name;
+    n.distance = 1000000;
+    n.visited = false;
+    n.edges = nil;
+    n.next = nil;
+    return n;
+}
+
+func addNode(graph: Graph, node: Node) : void {
+    if (graph.nodes == nil) {
+        graph.nodes = node;
+    } else {
+        var current: Node;
+        for (current = graph.nodes; current.next != nil; current = current.next) {
+            current = current;
+        }
+        current.next = node;
+    }
+}
+
+func addEdge(from: Node, to: Node, weight: int) : void {
+    var e: Edge;
+    e = new Edge;
+    e.target = to;
+    e.weight = weight;
+    e.next = from.edges;
+    from.edges = e;
+}
+
+func findShortestPath(graph: Graph, startName: string, endName: string) : int {
+    var start: Node;
+    start = findNode(graph, startName);
+
+    start.distance = 0;
+
+    var i: int;
+    i = 0;
+    for (; i < 100; i = i + 1) {
+        var current: Node;
+        current = findUnvisitedMinDistance(graph);
+
+        if (current == nil) {
+            break;
+        } else {
+            current.visited = true;
+        }
+
+        var edge: Edge;
+        for (edge = current.edges; edge != nil; edge = edge.next) {
+            var target: Node;
+            target = edge.target;
+
+            if (!target.visited && current.distance + edge.weight < target.distance) {
+                target.distance = current.distance + edge.weight;
+            } else {
+                target.visited = target.visited;
+            }
+        }
+    }
+
+    var end: Node;
+    end = findNode(graph, endName);
+    return end.distance;
+}
+
+func findNode(graph: Graph, name: string) : Node {
+    if (graph.nodes == nil) {
+        return nil;
+    }
+
+    var current: Node;
+    for (current = graph.nodes; current != nil; current = current.next) {
+        if (current.name == name) {
+            return current;
+        } else {
+            current.name = current.name;
+        }
+    }
+    return nil;
+}
+
+func findUnvisitedMinDistance(graph: Graph) : Node {
+    var minNode: Node;
+    minNode = nil;
+
+    var current: Node;
+    for (current = graph.nodes; current != nil; current = current.next) {
+        if (!current.visited && (minNode == nil || current.distance < minNode.distance)) {
+            minNode = current;
+        } else {
+            minNode = minNode;
+        }
+    }
+    return minNode;
+}
+
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

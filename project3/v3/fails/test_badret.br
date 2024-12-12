@@ -1,0 +1,23 @@
+func main() : int {
+    print(ret1());
+    print(ret2());
+    print(ret3());
+}
+
+func ret1() : bool {
+    return;
+}
+
+func ret2() : int {
+    var x: int;
+}
+
+func ret3() : void {
+    return;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

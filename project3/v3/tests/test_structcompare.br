@@ -1,0 +1,30 @@
+struct s {
+    val: int;
+}
+
+func main() : int {
+    var x : s;
+    var y : s;
+    print(x == y);
+    
+    x = new s;
+    y = new s;
+    print(x == y);
+
+    x = y;
+    print(x == y);
+
+    x.val = 10;
+    print(y.val);
+}
+
+
+
+/*
+*OUT*
+true
+false
+true
+10
+*OUT*
+*/

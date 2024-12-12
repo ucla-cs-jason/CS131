@@ -1,0 +1,12 @@
+func main() {
+    var i;
+    for (i = 0; i + 3; i = i + 1) {
+        print("Nope");
+    }
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

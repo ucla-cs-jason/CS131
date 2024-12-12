@@ -1,0 +1,24 @@
+struct s {
+    i : int;
+    next : s;
+}
+
+func main() : void {
+    var x: s;
+    x = new s;
+    x.i = 0;
+    x.next = new s;
+    x.next.i = 1;
+    x.next.next = new s;
+    x.next.next.i = 2;
+
+    var y : s;
+    y = x.next.next.i.next;
+}
+
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

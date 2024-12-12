@@ -1,0 +1,18 @@
+func foo(c) { 
+  if (c == 10) {
+    c = "hi";  /* reassigning c from the outer-block */
+    print(c);  /* prints "hi" */
+  }
+  print(c); /* prints “hi” */
+}
+
+func main() {
+  foo(10);
+}
+
+/*
+*OUT*
+hi
+hi
+*OUT*
+*/

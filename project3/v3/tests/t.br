@@ -1,0 +1,90 @@
+struct Node {
+    value: int;
+    next: Node;
+}
+
+func main() : void {
+    var list1: Node;
+    list1 = new Node;
+    list1.value = 1;
+    list1.next = new Node;
+    list1.next.value = 3;
+    list1.next.next = new Node;
+    list1.next.next.value = 5;
+    list1.next.next.next = nil;
+
+    var list2: Node;
+    list2 = new Node;
+    list2.value = 2;
+    list2.next = new Node;
+    list2.next.value = 4;
+    list2.next.next = new Node;
+    list2.next.next.value = 6;
+    list2.next.next.next = nil;
+
+
+
+    var mergedList: Node;
+    mergedList = mergeLists(list1, list2);
+    printList(mergedList);
+
+}
+
+func mergeLists(list1: Node, list2: Node) : Node {
+    var dummy: Node;
+    var tail: Node;
+    dummy = new Node;
+    dummy.value = 0;
+    dummy.next = nil;
+    tail = dummy;
+
+    var b:bool;
+    b = (list1 != nil) || (list2 != nil);
+    for (tail = tail; b == true; tail = tail) {
+        if (list1 == nil) {
+            tail.next = list2;
+            tail = list2;
+            list2 = list2.next;
+        } else {
+            if (list2 == nil) {
+                tail.next = list1;
+                tail = list1;
+                list1 = list1.next;
+            } else {
+                if (list1.value <= list2.value) {
+                    tail.next = list1;
+                    tail = list1;
+                    list1 = list1.next;
+                } else {
+                    tail.next = list2;
+                    tail = list2;
+                    list2 = list2.next;
+                }
+            }
+        }
+        b = (list1 != nil) || (list2 != nil);
+    }
+    return dummy.next;
+}
+
+func printList(head: Node) : void {
+    var current: Node;
+    for (current = head; current != nil; current = current.next) {
+        print(current.value, " ");
+    }
+    print("\n");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+1 
+2 
+3 
+4 
+5 
+6 
+\n
+*OUT*
+*/

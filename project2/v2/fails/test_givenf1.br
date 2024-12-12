@@ -1,0 +1,13 @@
+func main() {
+  bar(1, 3);
+}
+
+func bar(a) {
+ print(a);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

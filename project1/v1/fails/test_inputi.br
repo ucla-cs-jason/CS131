@@ -1,0 +1,9 @@
+func main() {
+    var x;
+    x = inputi("", "");
+}
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

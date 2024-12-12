@@ -1,0 +1,12 @@
+func main() : void {
+    print(inputi() == true);
+}
+
+/*
+*IN*
+1
+*IN*
+*OUT*
+true
+*OUT*
+*/

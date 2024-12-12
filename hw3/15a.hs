@@ -1,0 +1,1 @@
+data InstagramUser = Influencer | Normie

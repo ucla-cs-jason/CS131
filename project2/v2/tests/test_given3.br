@@ -1,0 +1,19 @@
+func main() {
+   var x;
+   x = inputs("Hello:");
+   print(x);
+   print(true);
+   print(false);
+}
+
+/*
+*IN*
+yep
+*IN*
+*OUT*
+Hello:
+yep
+true
+false
+*OUT*
+*/

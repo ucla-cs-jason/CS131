@@ -1,0 +1,13 @@
+func main() {
+  var bar;
+  bar = 5;
+  print("The answer is: ", (10 + bar) - 6, "!");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+The answer is: 9!
+*OUT*
+*/

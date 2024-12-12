@@ -1,0 +1,13 @@
+func main() : int {
+    ret3();
+}
+
+func ret3() : void {
+    return 1;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

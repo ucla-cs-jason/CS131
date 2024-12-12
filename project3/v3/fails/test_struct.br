@@ -1,0 +1,39 @@
+struct i {
+    val: int;
+    next: s;
+}
+
+struct s {
+    val: string;
+    next: i;
+}
+
+func main() : int {
+    var x : s;
+    var y : i;
+    x = new s;
+    y = new i;
+    x.next = y;
+    y.next = x;
+    x.val = "";
+    y.val = 10;
+
+    y.next.next.val = 1;
+    print(y.val);
+
+    y.next.next.val = y.val;
+    print(y.val);
+
+    var z : s;
+    z = x;
+    z.val = "z";
+    print(x.val);
+    z = nil;
+    print(x == nil);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

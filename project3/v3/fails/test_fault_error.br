@@ -1,0 +1,23 @@
+struct s {
+    i : int;
+    next : s;
+}
+
+func main() : void {
+    var x: s;
+    x = new s;
+    x.i = 0;
+    x.next = new s;
+    x.next.i = 1;
+    x.next.next = new s;
+    x.next.next.i = 2;
+
+    x.next.next.next.next = new Node;
+}
+
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

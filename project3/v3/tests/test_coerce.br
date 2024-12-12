@@ -1,0 +1,58 @@
+func main() : int {
+    var a : int;
+    var b : bool;
+    a = 1;
+    b = false;
+    b = a;
+    print(b);
+
+    print(rettrue());
+
+    b = false;
+    b = retone();
+    print(b);
+
+    pr(1);
+
+    if (1 == true) {
+        print(true);
+    } else {
+        print(false);
+    }
+
+    var i: int;
+    for (i = 0; 0 == true; i = i + 1) {
+        print("BOOM");
+    }
+
+    print(1 && true);
+    print(0 && true);
+    print(5 == true);
+    print(false != 1);
+}
+
+func rettrue() : bool {
+    return 1;
+}
+
+func retone() : int {
+    return 1;
+}
+
+func pr(b: bool) : void {
+    print(b);
+}
+
+/*
+*OUT*
+true
+true
+true
+true
+true
+true
+false
+true
+true
+*OUT*
+*/

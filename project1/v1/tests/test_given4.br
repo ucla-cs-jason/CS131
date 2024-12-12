@@ -1,0 +1,34 @@
+func main() {
+    var foo;
+ 	var bar;
+    var bletch;
+    var prompt;
+    var boo;
+    foo = 10;  /* 10 */
+	bar = 3 + foo;  /* 13 */
+	bletch = 3 - (5 + 2);  /* -4 */
+	prompt = "enter a number: ";
+    print();
+	boo = inputi();
+	boo = inputi("Enter a number: ");  /* -90 */
+    print(5);
+    print("hello world!");
+    print("the answer is:", bar);
+    print("the answer is: ", bar + (boo - 5), "!");
+    print(((5 + (6 - 3)) - ((2 - 3) - (1 - 7))));
+}
+/*
+*IN*
+-99
+-90
+*IN*
+*OUT*
+
+Enter a number: 
+5
+hello world!
+the answer is:13
+the answer is: -82!
+3
+*OUT*
+*/

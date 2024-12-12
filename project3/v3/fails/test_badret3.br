@@ -1,0 +1,18 @@
+struct s {
+    val: int;
+}
+
+func main() : int {
+    return f();
+}
+
+func f() : s {
+    return;
+}
+
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/
